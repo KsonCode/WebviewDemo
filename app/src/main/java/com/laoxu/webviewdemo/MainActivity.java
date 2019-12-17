@@ -20,6 +20,18 @@ public class MainActivity extends AppCompatActivity {
 
         initSettings();//webview的设置
 
+        initData();
+
+    }
+
+    JsToAndroid jsToAndroid;
+    /**
+     * 初始化数据的方法
+     */
+    private void initData() {
+        //把创建的接收类，加入到webviw中进行管理
+        webView.addJavascriptInterface(new JsToAndroid(),"jsToAndroid");
+
     }
 
     /**
@@ -81,8 +93,10 @@ public class MainActivity extends AppCompatActivity {
         int age = 50;
 
         //无参数
-        webView.loadUrl("javascript:name()");
+        webView.loadUrl("javascript:tomsg()");
         //有参数，年龄
         webView.loadUrl("javascript:age('"+age+"')");
     }
+
+
 }

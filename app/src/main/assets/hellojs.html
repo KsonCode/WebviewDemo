@@ -4,15 +4,15 @@
     <meta charset="utf-8">
 
     <script type="text/javasript">
-        function name(){
+        function tomsg(){
 
         document.getElementById("name").innerHTML =
-                 "<br\>java调用了js函数，无参";
+                 "<br\>java调用了js方法tomsg方法，无参";
 
         }
 
-        function age(age){
-        document.getElementById("name").innerHTML =age;
+        function age(hello){
+        document.getElementById("name").innerHTML =hello;
         }
     </script>
 
@@ -24,7 +24,8 @@
 
 <p id="name">name</p>
 
-<button onclick="click()" >幸运抽奖</button>
+<button onclick="window.jsToAndroid.getJsData()" >无参：从js传递给android</button>
+<button onclick="window.jsToAndroid.getJsData('hello，我是js，{}')" >有参：从js传递给android</button>
 </body>
 
 
