@@ -7,7 +7,7 @@ import android.webkit.JavascriptInterface;
  */
 public class JsToAndroid {
 
-    //注解
+    //注解,确保这个方法js能调用到
     @JavascriptInterface
     public void getJsData(){
 
