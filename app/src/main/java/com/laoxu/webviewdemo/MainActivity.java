@@ -32,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
     private void initData() {
 
         //首先加载html
-//        webView.loadUrl("file:///android_asset/zuoye.html");
-        webView.loadUrl("https://localhost:8443/zuoye");
+        webView.loadUrl("file:///android_asset/zuoye.html");
+
 
         //把创建的接收类，加入到webviw中进行管理
-        webView.addJavascriptInterface(new JsToAndroid(),"a");
+//        webView.addJavascriptInterface(new JsToAndroid(),"a");
+        webView.addJavascriptInterface(new GetProduct(),"getProduct");
         loadUrlbtn = findViewById(R.id.loadUrl);
         loadUrlbtn.setOnClickListener(new View.OnClickListener() {
             @Override
