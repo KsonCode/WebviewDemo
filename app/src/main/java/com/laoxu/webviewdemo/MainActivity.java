@@ -8,10 +8,12 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
     private WebView webView;
+    private Button loadUrlbtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,13 +26,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    JsToAndroid jsToAndroid;
     /**
      * 初始化数据的方法
      */
     private void initData() {
+
+        //首先加载html
+//        webView.loadUrl("file:///android_asset/zuoye.html");
+        webView.loadUrl("https://localhost:8443/zuoye");
+
         //把创建的接收类，加入到webviw中进行管理
-        webView.addJavascriptInterface(new JsToAndroid(),"jsToAndroid");
+        webView.addJavascriptInterface(new JsToAndroid(),"a");
+        loadUrlbtn = findViewById(R.id.loadUrl);
+        loadUrlbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //加载一个远程网页
+                webView.loadUrl("https://www.baidu.com/");
+            }
+        });
 
     }
 
@@ -58,11 +72,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void loadUrl(View view) {
-
-        //加载一个远程网页
-        webView.loadUrl("https://www.baidu.com/");
-    }
 
     public void loadLocal(View view) {
 
@@ -93,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         int age = 50;
 
         //无参数
-        webView.loadUrl("javascript:tomsg()");
+//        webView.loadUrl("javascript:tomsg()");
         //有参数，年龄
         webView.loadUrl("javascript:age('"+age+"')");
     }

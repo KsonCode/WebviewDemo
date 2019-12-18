@@ -13,7 +13,6 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:onClick="loadUrl"
             android:text="加载远程网页"
             android:id="@+id/loadUrl"
             android:layout_width="wrap_content"
@@ -34,12 +33,12 @@
             android:id="@+id/loadData"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-        <Button
-            android:text="android发送数据（用户信息）给js"
-            android:onClick="androidtojs"
-            android:id="@+id/androidtojs"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+<!--        <Button-->
+<!--            android:text="android发送数据（用户信息）给js"-->
+<!--&lt;!&ndash;            android:onClick="androidtojs"&ndash;&gt;-->
+<!--            android:id="@+id/androidtojs"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
 
     </LinearLayout>
 
